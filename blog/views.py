@@ -12,10 +12,10 @@ def home(request):
     # What you want the button to do.
     paypal_dict = {
         "business": "sb-o81vn645225@business.example.com",
-        "amount": "1.00",
+        "amount": "1.10",
         "currency_code": "CAD",
         "item_name": "name of the item",
-        "invoice": "unique-invoice-id_02",
+        "invoice": "unique-invoice-id_03",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
