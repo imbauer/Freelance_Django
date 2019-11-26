@@ -15,7 +15,7 @@ def home(request):
         "amount": "1.00",
         "currency_code": "CAD",
         "item_name": "name of the item",
-        "invoice": "unique-invoice-id1",
+        "invoice": "unique-invoice-id_02",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
@@ -37,11 +37,11 @@ def home(request):
 @csrf_exempt
 def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET}
-    return render_to_response('blog/paypal_return.html', context)
+    return render(request, 'blog/paypal_return.html', context)
 
 def paypal_cancel(request):
     context = {'post': request.POST, 'get': request.GET}
-    return render_to_response('blog/paypal_cancel.html', context)
+    return render(request, 'blog/paypal_cancel.html', context)
 
 
 class PostListView(ListView):
