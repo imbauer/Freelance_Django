@@ -28,8 +28,8 @@ def home(request):
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
         "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
-        "return": request.build_absolute_uri(reverse('your-return-view')),
-        "cancel_return": request.build_absolute_uri(reverse('your-cancel-view')),
+        "return": request.build_absolute_uri(reverse('paypal-return')),
+        "cancel_return": request.build_absolute_uri(reverse('paypal-cancel')),
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
 
