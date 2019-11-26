@@ -11,6 +11,9 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+
+
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
     path('paypal_register/', views.paypal_register, name='paypal-register'),
     path('paypal-return/', views.paypal_return),
     path('paypal-cancel/', views.paypal_cancel),
