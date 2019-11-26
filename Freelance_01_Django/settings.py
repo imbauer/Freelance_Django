@@ -169,7 +169,6 @@ PAYPAL_TEST = True
 # Application definition
 
 INSTALLED_APPS = [
-    'paypal.standard.ipn',
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
@@ -179,6 +178,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn'
 ]
 
 PAYPAL_RECEIVER_EMAIL = "sb-o81vn645225@business.example.com"

@@ -8,6 +8,8 @@ import os
 
 def home(request):
 
+    args = {}
+
     paypal_dict = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "1.00",
@@ -17,17 +19,19 @@ def home(request):
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/a-very-hard-to-guess-url/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan"
+        "custom": "premium_plan",
     }
 
     form = PayPalPaymentsForm(initial=paypal_dict)
 
-    context = {
-        'posts': Post.objects.all(),
-        'form': form
-    }
+    # context = {
+    #     'posts': Post.objects.all(),
+    #     'form': form
+    # }
 
-    return render(request, 'blog/home.html', context)
+    args['form'] = form
+
+    return render_to_response('blog/home.html', args)
 
 @csrf_exempt
 def paypal_return(request):
