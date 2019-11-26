@@ -60,7 +60,7 @@ def home(request):
 
 @csrf_exempt
 def paypal_return(request):
-    context = {'post': request.POST, 'get': request.GET}
+    context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user}
     return render(request, 'blog/paypal_return.html', context)
 
 @csrf_exempt
