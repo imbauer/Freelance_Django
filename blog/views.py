@@ -23,6 +23,7 @@ def home(request):
     form = PayPalPaymentsForm(initial=paypal_dict)
 
     context = {
+        'posts': Post.objects.all(),
         'form': form
     }
 
@@ -88,4 +89,4 @@ def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
 def paypal(request):
-    return render(request, 'blog/paypal.html')
+    return render(request, 'blog/paypal_register.html')
