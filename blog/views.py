@@ -9,17 +9,6 @@ import os
 
 def home(request):
 
-    paypal_dict = {
-        "business": "sb-o81vn645225@business.example.com",
-        "amount": "1.00",
-        "currency_code": "CAD",
-        "item_name": "name of the item",
-        "invoice": "unique-invoice-id",
-        "notify_url": "https://mywickeddjangoapp.herokuapp.com/a-very-hard-to-guess-url/",
-        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
-        "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan",
-    }
     # What you want the button to do.
     paypal_dict = {
         "business": "sb-o81vn645225@business.example.com",
@@ -27,9 +16,9 @@ def home(request):
         "currency_code": "CAD",
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
-        "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
-        "return": request.build_absolute_uri(reverse('paypal-return')),
-        "cancel_return": request.build_absolute_uri(reverse('paypal-cancel')),
+        "notify_url": "mywickeddjangoapp.herokuapp.com/paypal/",
+        "return": "mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "cancel_return": "mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
 
