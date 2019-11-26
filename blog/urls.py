@@ -2,6 +2,7 @@ from django.urls import path
 from django.conf.urls import include
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
 from . import views
+from django.conf.urls import url
 
 urlpatterns = [
     # path('', PostListView.as_view(), name='blog-home'),
