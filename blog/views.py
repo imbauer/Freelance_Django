@@ -15,7 +15,7 @@ def home(request):
         "amount": "1.00",
         "currency_code": "CAD",
         "item_name": "name of the item",
-        "invoice": "unique-invoice-id",
+        "invoice": "unique-invoice-id1",
         "notify_url": "mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "mywickeddjangoapp.herokuapp.com/paypal-cancel/",
