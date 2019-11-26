@@ -16,9 +16,9 @@ def home(request):
         "currency_code": "CAD",
         "item_name": "name of the item",
         "invoice": "unique-invoice-id1",
-        "notify_url": "mywickeddjangoapp.herokuapp.com/paypal/",
-        "return": "mywickeddjangoapp.herokuapp.com/paypal-return/",
-        "cancel_return": "mywickeddjangoapp.herokuapp.com/paypal-cancel/",
+        "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
+        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
 
