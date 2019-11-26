@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import include
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
 from . import views
 
@@ -9,4 +10,8 @@ urlpatterns = [
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+    path('paypal/', views.paypal, name='paypal-register'),
+    path('paypal-return/', views.paypal_return),
+    path('paypal-cancel/', views.paypal_cancel),
+    path('a-very-hard-to-guess-url/', include('paypal.standard.ipn.urls')),
 ]

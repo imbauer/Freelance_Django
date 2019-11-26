@@ -1,0 +1,8 @@
+{% extends "blog/base.html" %}
+{% block content%}
+    You only have <h1>{{ user.profile.tokens }} tokens</h1> left
+    Would you like to add more?
+
+    {{ form.sandbox }}
+
+{% endblock content %}
