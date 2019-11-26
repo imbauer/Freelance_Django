@@ -23,7 +23,6 @@ def home(request):
     form = PayPalPaymentsForm(initial=paypal_dict)
 
     context = {
-        'posts': Post.objects.all(),
         'form': form
     }
 
