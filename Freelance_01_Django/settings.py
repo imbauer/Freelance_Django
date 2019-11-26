@@ -181,7 +181,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PAYPAL_RECEIVER_EMAIL = os.environ.get('PAYPAL_RECEIVER_EMAIL')
+PAYPAL_RECEIVER_EMAIL = "sb-o81vn645225@business.example.com"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

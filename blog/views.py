@@ -9,7 +9,7 @@ import os
 def home(request):
 
     paypal_dict = {
-        "business": os.environ.get('PAYPAL_RECEIVER_EMAIL'),
+        "business": "sb-o81vn645225@business.example.com",
         "amount": "1.00",
         "currency_code": "CAD",
         "item_name": "name of the item",
@@ -17,7 +17,7 @@ def home(request):
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/a-very-hard-to-guess-url/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+        "custom": "premium_plan"
     }
 
     form = PayPalPaymentsForm(initial=paypal_dict)
