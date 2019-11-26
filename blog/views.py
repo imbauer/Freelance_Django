@@ -56,7 +56,7 @@ def home(request):
 
     context = {"form_01": form_01, "form_02": form_02, "form_03": form_03}
 
-    print "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+    print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
 
     return render(request, 'blog/home.html', context)
 
