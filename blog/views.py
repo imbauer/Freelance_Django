@@ -56,8 +56,6 @@ def home(request):
 
     context = {"form_01": form_01, "form_02": form_02, "form_03": form_03}
 
-    print("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
-
     return render(request, 'blog/home.html', context)
 
 @csrf_exempt
@@ -65,6 +63,7 @@ def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET}
     return render(request, 'blog/paypal_return.html', context)
 
+@csrf_exempt
 def paypal_cancel(request):
     context = {'post': request.POST, 'get': request.GET}
     return render(request, 'blog/paypal_cancel.html', context)
