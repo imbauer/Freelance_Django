@@ -10,27 +10,51 @@ import os
 def home(request):
 
     # What you want the button to do.
-    paypal_dict = {
+    paypal_dict_01 = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "1.10",
         "currency_code": "CAD",
-        "item_name": "name of the item",
-        "invoice": "unique-invoice-id_03",
+        "item_name": "basic",
+        "invoice": "unique-invoice-id-basic-01",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
+    form_01 = PayPalPaymentsForm(initial=paypal_dict)
 
+    paypal_dict_02 = {
+        "business": "sb-o81vn645225@business.example.com",
+        "amount": "2.20",
+        "currency_code": "CAD",
+        "item_name": "standard",
+        "invoice": "unique-invoice-standard-01",
+        "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
+        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
+        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+    }
+    form_02 = PayPalPaymentsForm(initial=paypal_dict)
 
-    form = PayPalPaymentsForm(initial=paypal_dict)
+    paypal_dict_03 = {
+        "business": "sb-o81vn645225@business.example.com",
+        "amount": "3.30",
+        "currency_code": "CAD",
+        "item_name": "unlimited",
+        "invoice": "unique-invoice-unlimited-01",
+        "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
+        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
+        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+    }
+    form_03 = PayPalPaymentsForm(initial=paypal_dict)
 
     # context = {
     #     'posts': Post.objects.all(),
     #     'form': form
     # }
 
-    context = {"form": form}
+    context = {"form_01": form_01, "form_02": form_02, "form_03": form_03}
 
     return render(request, 'blog/home.html', context)
 
