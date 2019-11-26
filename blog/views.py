@@ -21,7 +21,7 @@ def home(request):
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
-    form_01 = PayPalPaymentsForm(initial=paypal_dict)
+    form_01 = PayPalPaymentsForm(initial=paypal_dict_01)
 
     paypal_dict_02 = {
         "business": "sb-o81vn645225@business.example.com",
@@ -34,7 +34,7 @@ def home(request):
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
-    form_02 = PayPalPaymentsForm(initial=paypal_dict)
+    form_02 = PayPalPaymentsForm(initial=paypal_dict_02)
 
     paypal_dict_03 = {
         "business": "sb-o81vn645225@business.example.com",
@@ -47,7 +47,7 @@ def home(request):
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
-    form_03 = PayPalPaymentsForm(initial=paypal_dict)
+    form_03 = PayPalPaymentsForm(initial=paypal_dict_03)
 
     # context = {
     #     'posts': Post.objects.all(),
