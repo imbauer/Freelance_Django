@@ -42,7 +42,7 @@ def home(request):
         "amount": "3.30",
         "currency_code": "CAD",
         "item_name": "unlimited",
-        "invoice": request.user.username + "-unlimited-" + User.objects.get(username=request.user).profile.invoice_count,
+        "invoice": User.objects.get(username=request.user).username + "-unlimited-" + User.objects.get(username=request.user).profile.invoice_count,
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
