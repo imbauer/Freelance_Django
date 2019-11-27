@@ -16,7 +16,7 @@ def home(request):
         "amount": "1.10",
         "currency_code": "CAD",
         "item_name": "basic",
-        "invoice": "unique-invoice-id-basic-04",
+        "invoice": request.user + "-basic-" + User.objects.get(username=request.user).profile.invoice_count,
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
@@ -65,6 +65,7 @@ def paypal_return(request):
     request.user.profile.tokens = request.user.profile.tokens + 1;
     t = User.objects.get(username=request.user)
     t.profile.tokens = t.profile.tokens + 1  # change field
+    t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
     return render(request, 'blog/paypal_return.html', context)
 
