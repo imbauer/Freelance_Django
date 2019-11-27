@@ -31,7 +31,7 @@ def home(request):
         "item_name": "standard",
         "invoice": request.user.username + "-standard-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
-        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-02/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
@@ -44,7 +44,7 @@ def home(request):
         "item_name": "unlimited",
         "invoice": request.user.username + "-unlimited-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
-        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
+        "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-03/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
     }
@@ -62,9 +62,26 @@ def home(request):
 @csrf_exempt
 def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
-    request.user.profile.tokens = request.user.profile.tokens + 1;
     t = User.objects.get(username=request.user)
     t.profile.tokens = t.profile.tokens + 1  # change field
+    t.profile.invoice_count = t.profile.invoice_count + 1
+    t.save() # this will update only
+    return render(request, 'blog/paypal_return.html', context)
+
+@csrf_exempt
+def paypal_return_02(request):
+    context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
+    t = User.objects.get(username=request.user)
+    t.profile.tokens = t.profile.tokens + 5  # change field
+    t.profile.invoice_count = t.profile.invoice_count + 1
+    t.save() # this will update only
+    return render(request, 'blog/paypal_return.html', context)
+
+@csrf_exempt
+def paypal_return_03(request):
+    context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
+    t = User.objects.get(username=request.user)
+    t.profile.tokens = t.profile.tokens + 10  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
     return render(request, 'blog/paypal_return.html', context)

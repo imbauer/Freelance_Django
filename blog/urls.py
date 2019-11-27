@@ -17,6 +17,8 @@ urlpatterns = [
     url(r'^paypal/', include('paypal.standard.ipn.urls')),
     path('paypal_register/', views.paypal_register, name='paypal-register'),
     path('paypal-return/', views.paypal_return),
+    path('paypal-return-02/', views.paypal_return_02),
+    path('paypal-return-03/', views.paypal_return_03),
     path('paypal-cancel/', views.paypal_cancel),
     # path('a-very-hard-to-guess-url/', include('paypal.standard.ipn.urls')),
 ]
