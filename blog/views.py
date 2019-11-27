@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from django.contrib.auth.models import User
 import os
 
 def home(request):
@@ -15,7 +16,7 @@ def home(request):
         "amount": "1.10",
         "currency_code": "CAD",
         "item_name": "basic",
-        "invoice": "unique-invoice-id-basic-03",
+        "invoice": "unique-invoice-id-basic-04",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
@@ -28,7 +29,7 @@ def home(request):
         "amount": "2.20",
         "currency_code": "CAD",
         "item_name": "standard",
-        "invoice": "unique-invoice-standard-03",
+        "invoice": "unique-invoice-standard-04",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
@@ -41,7 +42,7 @@ def home(request):
         "amount": "3.30",
         "currency_code": "CAD",
         "item_name": "unlimited",
-        "invoice": "unique-invoice-unlimited-03",
+        "invoice": "unique-invoice-unlimited-04",
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
@@ -62,6 +63,9 @@ def home(request):
 def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     request.user.profile.tokens = request.user.profile.tokens + 1;
+    t = User.objects.get(username=request.user)
+    t.profile.tokens = 999  # change field
+    t.save() # this will update only
     return render(request, 'blog/paypal_return.html', context)
 
 @csrf_exempt
