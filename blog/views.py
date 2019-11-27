@@ -64,7 +64,7 @@ def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     request.user.profile.tokens = request.user.profile.tokens + 1;
     t = User.objects.get(username=request.user)
-    t.profile.tokens = 999  # change field
+    t.profile.tokens = t.profile.tokens + 1  # change field
     t.save() # this will update only
     return render(request, 'blog/paypal_return.html', context)
 
