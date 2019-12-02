@@ -9,6 +9,9 @@ from django.contrib.auth.models import User
 import os
 
 def home(request):
+    return render(request, 'blog/home.html')
+
+def pricing(request):
 
     # What you want the button to do.
     paypal_dict_01 = {
