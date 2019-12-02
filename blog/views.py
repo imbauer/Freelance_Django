@@ -141,5 +141,8 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
+def graphs(request):
+    return render(request, 'blog/graphs.html', {'title': 'About'})
+
 def paypal_register(request):
     return render(request, 'blog/paypal_register.html')
