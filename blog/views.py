@@ -63,7 +63,7 @@ def home(request):
 def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     t = User.objects.get(username=request.user)
-    t.profile.tokens = t.profile.tokens + 1  # change field
+    t.profile.tokens = t.profile.tokens + 2  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
     return render(request, 'blog/home.html', context)
