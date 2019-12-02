@@ -60,7 +60,7 @@ def pricing(request):
 
     context = {"form_01": form_01, "form_02": form_02, "form_03": form_03}
 
-    return render(request, 'blog/home.html', context)
+    return render(request, 'blog/pricing.html', context)
 
 @csrf_exempt
 def paypal_return(request):
