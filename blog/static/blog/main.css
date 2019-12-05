@@ -5,64 +5,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
 body{background-color:#eee;}
 
-
-
-
-.input-number-group input[type=number]::-webkit-inner-spin-button,
-.input-number-group input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-          appearance: none;
-}
-
-.input-number-group .input-group-button {
-  line-height: calc(80px/2 - 5px);
-}
-
-.input-number-group .input-number {
-  width: 80px;
-  padding: 0 12px;
-  vertical-align: top;
-  text-align: center;
-  outline: none;
-  display: block;
-  margin: 0;
-}
-
-.input-number-group .input-number,
-.input-number-group .input-number-decrement,
-.input-number-group .input-number-increment {
-  border: 1px solid #cacaca;
-  height: 40px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  border-radius: 0;
-}
-
-.input-number-group .input-number-decrement,
-.input-number-group .input-number-increment {
-  display: inline-block;
-  width: 40px;
-  background: #e6e6e6;
-  color: #0a0a0a;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-.input-number-group .input-number-decrement {
-  margin-right: 0.3rem;
-}
-
-.input-number-group .input-number-increment {
-  margin-left: 0.3rem;
-}
-
-
-
 #generic_price_table{
 	background-color: #f0eded;
 }
@@ -110,6 +52,11 @@ body{background-color:#eee;}
 #generic_price_table .generic_content .generic_feature_list ul li:hover{
 	background-color: #E4E4E4;
 	border-left: 5px solid #2ECC71;
+}
+
+#generic_price_table .generic_content .generic_feature_list .extra ul li:hover{
+	background-color: #E4E4E4;
+	border-left: 0px solid #2ECC71;
 }
 
 #generic_price_table .generic_content .generic_price_btn a{
