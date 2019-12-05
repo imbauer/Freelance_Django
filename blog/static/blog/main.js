@@ -13,7 +13,7 @@ function add(){
 
   input.val(++value);
 
-  if(value > 0){
+  if(value > 3){
     $('#subs').removeAttr('disabled');
   }
 
@@ -25,7 +25,7 @@ function remove(){
    var input = $('#noOfRoom'),
        value = input.val();
 
-   if(value > 0){
+   if(value > 3){
      input.val(--value);
    }else{
      $('#subs').attr('disabled','disabled');
