@@ -16,6 +16,9 @@ function add(){
   if(value > 3){
     $('#subs').removeAttr('disabled');
   }
+  if(value < 3){
+    input.val(3);
+  }
 
 }
 
