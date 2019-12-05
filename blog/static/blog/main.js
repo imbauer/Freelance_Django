@@ -1,11 +1,34 @@
-$('.input-number-increment').click(function() {
-  var $input = $(this).parents('.input-number-group').find('.input-number');
-  var val = parseInt($input.val(), 10);
-  $input.val(val + 1);
+$(function(){
+
+  $('#adds').on('click',add);
+  $('#subs').on('click',remove);
+
 });
 
-$('.input-number-decrement').click(function() {
-  var $input = $(this).parents('.input-number-group').find('.input-number');
-  var val = parseInt($input.val(), 10);
-  $input.val(val - 1);
-})
+
+function add(){
+
+  var input = $('#noOfRoom'),
+      value = input.val();
+
+  input.val(++value);
+
+  if(value > 0){
+    $('#subs').removeAttr('disabled');
+  }
+
+}
+
+
+function remove(){
+
+   var input = $('#noOfRoom'),
+       value = input.val();
+
+   if(value > 0){
+     input.val(--value);
+   }else{
+     $('#subs').attr('disabled','disabled');
+  }
+
+}
