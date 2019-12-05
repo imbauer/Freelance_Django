@@ -36,11 +36,15 @@ body{background-color:#eee;}
 .incrementerForm #decrease {
   margin-right: -4px;
   border-radius: 8px 0 0 8px;
+  width: 40px;
+  height: 40px;
 }
 
 .incrementerForm #increase {
   margin-left: -4px;
   border-radius: 0 8px 8px 0;
+  width: 40px;
+  height: 40px;
 }
 
 .incrementerForm #input-wrap {
