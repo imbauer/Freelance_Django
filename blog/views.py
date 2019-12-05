@@ -14,6 +14,8 @@ def home(request):
 
 def pricing(request):
 
+    searchWord = request.GET.get('dynamic')
+
     # What you want the button to do.
     paypal_dict_01 = {
         "business": "sb-o81vn645225@business.example.com",
@@ -83,6 +85,9 @@ def paypal_return_02(request):
 
 @csrf_exempt
 def paypal_return_03(request):
+
+    searchWord = request.GET.get('dynamic')
+
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     t = User.objects.get(username=request.user)
     initial = t.profile.tokens
