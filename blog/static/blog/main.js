@@ -3,6 +3,7 @@ function increaseValue() {
   value = isNaN(value) ? 0 : value;
   value++;
   document.getElementById('number').value = value;
+  document.getElementById('dynamic').value = value;
 }
 
 function decreaseValue() {
@@ -11,4 +12,5 @@ function decreaseValue() {
   value < 1 ? value = 1 : '';
   value--;
   document.getElementById('number').value = value;
+  document.getElementById('dynamic').value = value;
 }
