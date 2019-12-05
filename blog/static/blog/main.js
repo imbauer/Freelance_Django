@@ -1,34 +1,14 @@
-$(function(){
-
-  $('#adds').on('click',add);
-  $('#subs').on('click',remove);
-
-});
-
-
-function add(){
-
-  var input = $('#noOfRoom'),
-      value = input.val();
-
-  input.val(++value);
-
-  if(value > 3){
-    $('#subs').removeAttr('disabled');
-  }
-
+function increaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  document.getElementById('number').value = value;
 }
 
-
-function remove(){
-
-   var input = $('#noOfRoom'),
-       value = input.val();
-
-   if(value > 3){
-     input.val(--value);
-   }else{
-     $('#subs').attr('disabled','disabled');
-  }
-
+function decreaseValue() {
+  var value = parseInt(document.getElementById('number').value, 10);
+  value = isNaN(value) ? 0 : value;
+  value < 1 ? value = 1 : '';
+  value--;
+  document.getElementById('number').value = value;
 }
