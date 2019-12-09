@@ -4,7 +4,7 @@ from django.dispatch import receiver
 
 @receiver(valid_ipn_received)
 def show_me_the_money(sender, **kwargs):
-    t = User.objects.get(username="TestUser")
+    t = User.objects.get(username="vanya7")
 
     initial = t.profile.tokens
     final = t.profile.tokens + 10
