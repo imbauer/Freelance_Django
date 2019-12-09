@@ -14,13 +14,12 @@ body{background-color:#eee;}
 
 .value-button {
   display: inline-block;
-  border: 1px solid #ddd;
   margin: 0px;
-  width: 40px;
-  height: 20px;
+  width: 50;
+  height: 27px;
   text-align: center;
-  vertical-align: middle;
-  background: #eee;
+  color:white;
+  background: #969696;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -55,7 +54,7 @@ input#number {
   border-bottom: 1px solid #ddd;
   margin: 0px;
   width: 40px;
-  height: 40px;
+  height: 27px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
