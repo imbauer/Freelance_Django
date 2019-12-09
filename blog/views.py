@@ -4,6 +4,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Post
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -61,7 +62,7 @@ def pricing(request):
     #     'form': form
     # }
 
-    context = {"form_01": form_01, "form_02": form_02, "form_03": form_03, "username": request.user.username, "invoice": request.user.username + "-unlimited-" + str(User.objects.get(username=request.user).profile.invoice_count)}
+    context = {"form_01": form_01, "form_02": form_02, "form_03": form_03, "username": request.user.username}
 
     return render(request, 'blog/pricing.html', context)
 
