@@ -32,6 +32,6 @@ def show_me_the_money(sender, **kwargs):
             t.profile.invoice_count = t.profile.invoice_count + 1
             t.save() # this will update only
     else:
-        #...
+        return
 
 valid_ipn_received.connect(show_me_the_money)
