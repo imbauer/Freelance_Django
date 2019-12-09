@@ -4,7 +4,7 @@ from django.dispatch import receiver
 
 @receiver(valid_ipn_received)
 def show_me_the_money(sender, **kwargs):
-    t = User.objects.get(username="vanya7")
+    t = User.objects.get(username=sender.username)
 
 
     if sender.custom == "basic_plan":
