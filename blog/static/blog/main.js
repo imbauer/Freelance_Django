@@ -15,7 +15,7 @@ function increaseValue() {
   document.getElementById('dynamic').innerHTML = a[0];
   document.getElementById('dynamicdec').innerHTML = "." + parseFloat(a[1]).toFixed(2).toString().slice(-2);
   var input = document.getElementById("cost");
-  input.value = value.toString() + ".00";
+  input.value = count;
   console.log(input.value);
 }
 
