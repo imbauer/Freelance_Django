@@ -25,12 +25,12 @@ def show_me_the_money(sender, **kwargs):
             price = "3.30"
 
         if ipn_obj.mc_gross == price and ipn_obj.mc_currency == 'CAD':
-        t = User.objects.get(username=request.user)
-        initial = t.profile.tokens
-        final = t.profile.tokens + 1
-        t.profile.tokens = t.profile.tokens + 1  # change field
-        t.profile.invoice_count = t.profile.invoice_count + 1
-        t.save() # this will update only
+            t = User.objects.get(username=request.user)
+            initial = t.profile.tokens
+            final = t.profile.tokens + 1
+            t.profile.tokens = t.profile.tokens + 1  # change field
+            t.profile.invoice_count = t.profile.invoice_count + 1
+            t.save() # this will update only
     else:
         #...
 
