@@ -7,19 +7,19 @@ def show_me_the_money(sender, **kwargs):
     t = User.objects.get(username="vanya7")
 
 
-    if sender.custom == "basic_plan":
+    if sender.item_name == "basic":
         initial = t.profile.tokens
         final = t.profile.tokens + 1
         t.profile.tokens = t.profile.tokens + 1  # change field
         t.profile.invoice_count = t.profile.invoice_count + 1
 
-    elif sender.custom == "standard_plan":
+    elif sender.item_name == "standard":
         initial = t.profile.tokens
         final = t.profile.tokens + 2
         t.profile.tokens = t.profile.tokens + 2  # change field
         t.profile.invoice_count = t.profile.invoice_count + 1
 
-    elif sender.custom == "custom_plan":
+    elif sender.item_name == "custom":
         initial = t.profile.tokens
         final = t.profile.tokens + 3
         t.profile.tokens = t.profile.tokens + 3  # change field
