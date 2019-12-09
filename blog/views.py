@@ -61,7 +61,7 @@ def pricing(request):
     #     'form': form
     # }
 
-    context = {"form_01": form_01, "form_02": form_02, "form_03": form_03}
+    context = {"form_01": form_01, "form_02": form_02, "form_03": form_03, "username": request.user.username, "invoice": request.user.username + "-unlimited-" + str(User.objects.get(username=request.user).profile.invoice_count)}
 
     return render(request, 'blog/pricing.html', context)
 

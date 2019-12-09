@@ -198,9 +198,10 @@
                             <input type="hidden" name="currency_code" value="CAD">
                             <input type="hidden" name="quantity" value="1">
                             <input type="hidden" name="env" value="www.sandbox">
+                            <input type="hidden" name="invoice" value="{{ invoice }}">
                             <input type="hidden" name="return" value="https://mywickeddjangoapp.herokuapp.com/paypal-return-03/">
                             <input type="hidden" name="notify_url" value="https://mywickeddjangoapp.herokuapp.com/paypal/">
-                            <input type="hidden" name="custom" value="">
+                            <input type="hidden" name="custom" value="{{ username }}">
                             <input type="hidden" name="rm" value="2">
                             <input type="hidden" name="cmd" value="_xclick">
                             <input type="hidden" name="business" value="sb-o81vn645225@business.example.com">
