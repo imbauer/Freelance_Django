@@ -26,20 +26,20 @@ def pricing(request):
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+        "custom": "basic_plan",  # Custom command to correlate to some function later (optional)
     }
     form_01 = PayPalPaymentsForm(initial=paypal_dict_01)
 
     paypal_dict_02 = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "2.20",
-        "currency_code": "USD",
+        "currency_code": "CAD",
         "item_name": "standard",
         "invoice": request.user.username + "-standard-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-02/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+        "custom": "standard_plan",  # Custom command to correlate to some function later (optional)
     }
     form_02 = PayPalPaymentsForm(initial=paypal_dict_02)
 
@@ -52,7 +52,7 @@ def pricing(request):
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-03/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
-        "custom": "premium_plan",  # Custom command to correlate to some function later (optional)
+        "custom": "custom_plan",  # Custom command to correlate to some function later (optional)
     }
     form_03 = PayPalPaymentsForm(initial=paypal_dict_03)
 
