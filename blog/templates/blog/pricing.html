@@ -191,7 +191,7 @@
                         <div class="generic_price_btn clearfix">
                         	{{ form_03.render }}
                         </div>
-                        <form name="myform" action="{% url 'paypal' %}" method="post">
+                        <form name="myform" action="https://mywickeddjangoapp.herokuapp.com/paypal/" method="post">
 <input type="hidden" name="business" value="sb-o81vn645225@business.example.com" />
 <input type="hidden" name="notify_url" value="https://mywickeddjangoapp.herokuapp.com/paypal/" />
 <input type="hidden" name="cancel_return" value="https://mywickeddjangoapp.herokuapp.com/paypal-cancel/" />
