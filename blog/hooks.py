@@ -6,6 +6,34 @@ from django.dispatch import receiver
 def show_me_the_money(sender, **kwargs):
 
     ipn_obj = sender
+
+    t = User.objects.get(username="vanya7")
+    # Undertake some action depending upon `ipn_obj`.
+    if ipn_obj.custom == "basic_plan":
+        price = "1.10"
+        print("Small")
+        initial = t.profile.tokens
+        final = t.profile.tokens + 1
+        t.profile.tokens = t.profile.tokens + 1  # change field
+        t.profile.invoice_count = t.profile.invoice_count + 1
+
+    elif ipn_obj.custom == "standard_plan":
+        price = "2.20"
+        print("Medium")
+        initial = t.profile.tokens
+        final = t.profile.tokens + 2
+        t.profile.tokens = t.profile.tokens + 2  # change field
+        t.profile.invoice_count = t.profile.invoice_count + 2
+
+    elif ipn_obj.custom == "custom_plan":
+        price = "3.30"
+        print("Large")
+        initial = t.profile.tokens
+        final = t.profile.tokens + 3
+        t.profile.tokens = t.profile.tokens + 3  # change field
+        t.profile.invoice_count = t.profile.invoice_count + 3
+
+
     if ipn_obj.payment_status == ST_PP_COMPLETED:
         # WARNING !
         # Check that the receiver email is the same we previously
