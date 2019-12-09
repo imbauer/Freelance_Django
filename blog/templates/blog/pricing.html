@@ -199,7 +199,7 @@
                             <input type="hidden" name="quantity" value="1">
                             <input type="hidden" name="env" value="www.sandbox">
                             <input type="hidden" name="invoice" value="{{ invoice }}">
-                            <input type="hidden" name="return" value="https://mywickeddjangoapp.herokuapp.com/paypal-return-03/">
+                            <input type="hidden" name="return" value="{% url 'paypal_return_03' %}">
                             <input type="hidden" name="notify_url" value="https://mywickeddjangoapp.herokuapp.com/paypal/">
                             <input type="hidden" name="custom" value="{{ username }}">
                             <input type="hidden" name="rm" value="2">
