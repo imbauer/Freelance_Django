@@ -48,6 +48,7 @@ def pricing(request):
         "amount": "3.30",
         "currency_code": "CAD",
         "item_name": "custom",
+        "item_number": "7",
         "invoice": request.user.username + "-unlimited-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-03/",
