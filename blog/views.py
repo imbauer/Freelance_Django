@@ -68,17 +68,17 @@ def pricing(request):
 @csrf_exempt
 def paypal_return(request):
     messages.success(request, f'New token count will take approximately 10 seconds, refresh')
-    return render(request, 'blog/home.html')
+    return HttpResponseRedirect('/pricing')
 
 @csrf_exempt
 def paypal_return_02(request):
     messages.success(request, f'New token count will take approximately 10 seconds, refresh')
-    return render(request, 'blog/home.html')
+    return HttpResponseRedirect('/pricing')
 
 @csrf_exempt
 def paypal_return_03(request):
     messages.success(request, f'New token count will take approximately 10 seconds, refresh')
-    return render(request, 'blog/home.html')
+    return HttpResponseRedirect('/pricing')
 
 @csrf_exempt
 def paypal_cancel(request):
