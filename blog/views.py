@@ -33,7 +33,7 @@ def pricing(request):
     paypal_dict_02 = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "2.20",
-        "currency_code": "CAD",
+        "currency_code": "USD",
         "item_name": "standard",
         "invoice": request.user.username + "-standard-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
@@ -75,7 +75,7 @@ def paypal_return(request):
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
     messages.success(request, f'Increased from {initial} tokens to {final} tokens (+1)')
-    return render(request, 'main_app/home.html', context)
+    return render(request, 'blog/home.html', context)
 
 @csrf_exempt
 def paypal_return_02(request):
@@ -87,7 +87,7 @@ def paypal_return_02(request):
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
     messages.success(request, f'Increased from {initial} tokens to {final} tokens (+2)')
-    return render(request, 'main_app/home.html', context)
+    return render(request, 'blog/home.html', context)
 
 @csrf_exempt
 def paypal_return_03(request):
