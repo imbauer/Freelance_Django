@@ -16,6 +16,7 @@ function increaseValue() {
   document.getElementById('dynamicdec').innerHTML = "." + parseFloat(a[1]).toFixed(2).toString().slice(-2);
   var input = document.getElementById("cost");
   input.value = value.toString();
+  console.log(input.value);
 }
 
 function decreaseValue() {
