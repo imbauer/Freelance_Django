@@ -27,7 +27,6 @@ def pricing(request):
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "basic_plan",  # Custom command to correlate to some function later (optional)
-        "username": request.user.username,
     }
     form_01 = PayPalPaymentsForm(initial=paypal_dict_01)
 
@@ -41,7 +40,6 @@ def pricing(request):
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-02/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "standard_plan",  # Custom command to correlate to some function later (optional)
-        "username": request.user.username,
     }
     form_02 = PayPalPaymentsForm(initial=paypal_dict_02)
 
@@ -55,7 +53,6 @@ def pricing(request):
         "return": "https://mywickeddjangoapp.herokuapp.com/paypal-return-03/",
         "cancel_return": "https://mywickeddjangoapp.herokuapp.com/paypal-cancel/",
         "custom": "custom_plan",  # Custom command to correlate to some function later (optional)
-        "username": request.user.username,
     }
     form_03 = PayPalPaymentsForm(initial=paypal_dict_03)
 
