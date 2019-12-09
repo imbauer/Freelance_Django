@@ -33,7 +33,7 @@ def pricing(request):
     paypal_dict_02 = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "2.20",
-        "currency_code": "USD",
+        "currency_code": "CAD",
         "item_name": "standard",
         "invoice": request.user.username + "-standard-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
