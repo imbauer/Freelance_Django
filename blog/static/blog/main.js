@@ -39,4 +39,10 @@ function decreaseValue() {
   a[1] = "." + a[1];
   document.getElementById('dynamic').innerHTML = a[0];
   document.getElementById('dynamicdec').innerHTML = "." + parseFloat(a[1]).toFixed(2).toString().slice(-2);
+  var item_name = document.getElementById("item_name");
+  var new_item_name = item_name.value.replace(/[0-9]/g, '') + value.toString();
+  item_name.value = new_item_name;
+  var input = document.getElementById("cost");
+  input.value = count;
+  console.log(input.value);
 }
