@@ -101,7 +101,7 @@ def paypal_return_03(request):
     t.profile.tokens = t.profile.tokens + 3  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
-    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+{initial})')
+    messages.success(request, f'New token count will take approximately 10 seconds, refresh')
     return render(request, 'blog/home.html', context)
 
 @csrf_exempt
