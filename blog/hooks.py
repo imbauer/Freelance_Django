@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 
 @receiver(valid_ipn_received)
-def show_me_the_money(request, sender, **kwargs):
-    t = User.objects.get(username=request.user)
+def show_me_the_money(sender, **kwargs):
+    t = User.objects.get(username="vanya7")
 
     initial = t.profile.tokens
     final = t.profile.tokens + 10
