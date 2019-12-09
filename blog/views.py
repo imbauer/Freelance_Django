@@ -67,12 +67,12 @@ def pricing(request):
 
 @csrf_exempt
 def paypal_return(request):
-    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+1)')
+    messages.success(request, f'New token count will take approximately 10 seconds, refresh')
     return render(request, 'blog/home.html', context)
 
 @csrf_exempt
 def paypal_return_02(request):
-    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+2)')
+    messages.success(request, f'New token count will take approximately 10 seconds, refresh')
     return render(request, 'blog/home.html', context)
 
 @csrf_exempt
