@@ -14,7 +14,7 @@ def home(request):
 
 def pricing(request):
 
-    searchWord = request.GET.get('dynamic')
+
 
     # What you want the button to do.
     paypal_dict_01 = {
@@ -33,7 +33,7 @@ def pricing(request):
     paypal_dict_02 = {
         "business": "sb-o81vn645225@business.example.com",
         "amount": "2.20",
-        "currency_code": "CAD",
+        "currency_code": "USD",
         "item_name": "standard",
         "invoice": request.user.username + "-standard-" + str(User.objects.get(username=request.user).profile.invoice_count),
         "notify_url": "https://mywickeddjangoapp.herokuapp.com/paypal/",
@@ -69,38 +69,45 @@ def pricing(request):
 def paypal_return(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     t = User.objects.get(username=request.user)
-    t.profile.tokens = t.profile.tokens + 2  # change field
+    initial = t.profile.tokens
+    final = t.profile.tokens + 1
+    t.profile.tokens = t.profile.tokens + 1  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
-    return render(request, 'blog/home.html', context)
+    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+1)')
+    return render(request, 'main_app/home.html', context)
 
 @csrf_exempt
 def paypal_return_02(request):
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     t = User.objects.get(username=request.user)
-    t.profile.tokens = t.profile.tokens + 5  # change field
+    initial = t.profile.tokens
+    final = t.profile.tokens + 2
+    t.profile.tokens = t.profile.tokens + 2  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
-    return render(request, 'blog/home.html', context)
+    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+2)')
+    return render(request, 'main_app/home.html', context)
 
 @csrf_exempt
 def paypal_return_03(request):
 
-    searchWord = request.GET.get('dynamic')
+
 
     context = {'post': request.POST, 'get': request.GET, 'method': request.method, 'user': request.user, 'body': request.body, 'path': request.path}
     t = User.objects.get(username=request.user)
     initial = t.profile.tokens
-    final = t.profile.tokens + 10
-    t.profile.tokens = t.profile.tokens + 10  # change field
+    final = t.profile.tokens + 3
+    t.profile.tokens = t.profile.tokens + 3  # change field
     t.profile.invoice_count = t.profile.invoice_count + 1
     t.save() # this will update only
-    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+{searchWord})')
+    messages.success(request, f'Increased from {initial} tokens to {final} tokens (+{initial})')
     return render(request, 'blog/home.html', context)
 
 @csrf_exempt
 def paypal_cancel(request):
     context = {'post': request.POST, 'get': request.GET}
+    messages.warning(request, f'Failed to add tokens to your account')
     return render(request, 'blog/paypal_cancel.html', context)
 
 
