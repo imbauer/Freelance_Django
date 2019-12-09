@@ -193,10 +193,9 @@
                         </div>
                         <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr" class="paypal-button" target="_top">
                             <input type="hidden" name="button" value="buynow">
-                            <input type="hidden" name="item_name" value="custom">
+                            <input type="hidden" id="item_name" name="item_name" value="custom3">
                             <input type="hidden" id="cost" name="amount" value="1.00">
                             <input type="hidden" name="currency_code" value="CAD">
-                            <input type="hidden" name="on0" value="11">
                             <input type="hidden" name="quantity" value="1">
                             <input type="hidden" name="env" value="www.sandbox">
                             <input type="hidden" name="invoice" value="{{ invoice }}">

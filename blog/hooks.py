@@ -19,10 +19,11 @@ def show_me_the_money(sender, **kwargs):
         t.profile.tokens = t.profile.tokens + 2  # change field
         t.profile.invoice_count = t.profile.invoice_count + 1
 
-    elif sender.item_name == "custom":
+    elif "custom" in sender.item_name:
+        amount = int(sender.item_name.replace('custom', ''))
         initial = t.profile.tokens
-        final = t.profile.tokens + sender.on0
-        t.profile.tokens = t.profile.tokens + sender.on0  # change field
+        final = t.profile.tokens + amount
+        t.profile.tokens = t.profile.tokens + amount  # change field
         t.profile.invoice_count = t.profile.invoice_count + 1
 
     else:
