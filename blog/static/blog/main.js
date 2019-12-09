@@ -14,6 +14,8 @@ function increaseValue() {
   a[1] = "." + a[1];
   document.getElementById('dynamic').innerHTML = a[0];
   document.getElementById('dynamicdec').innerHTML = "." + parseFloat(a[1]).toFixed(2).toString().slice(-2);
+  var input = document.getElementById("cost");
+  input.value = count;
 }
 
 function decreaseValue() {
