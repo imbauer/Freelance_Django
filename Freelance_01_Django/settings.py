@@ -157,12 +157,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'e^b6$r8ro9uwdf)jc4-()u(5v8sg=)*!xk!ehi)qnyaw(^hjqm'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE')
 
-ALLOWED_HOSTS = ['mywickeddjangoapp.herokuapp.com']
+ALLOWED_HOSTS = ['freelance-01-django-dev.us-east-2.elasticbeanstalk.com']
 PAYPAL_TEST = True
 
 
