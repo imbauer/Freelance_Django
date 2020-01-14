@@ -221,11 +221,11 @@ WSGI_APPLICATION = 'Freelance_01_Django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'test',
+        'USER': 'test',
+        'PASSWORD': 'test',
+        'HOST': 'freelance-01-django-dev.us-east-2.elasticbeanstalk.com',
+        'PORT': '5432',
     }
 }
 
