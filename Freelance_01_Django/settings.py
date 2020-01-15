@@ -224,7 +224,7 @@ DATABASES = {
         'NAME': 'database-1',
         'USER': 'postgres',
         'PASSWORD': 'canadawaterbottle^23',
-        'HOST': 'database-1.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
+        'HOST': 'aa1kvk4ssm5wfd2.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
