@@ -221,7 +221,7 @@ WSGI_APPLICATION = 'Freelance_01_Django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'database-1',
+        'NAME': 'ebdb',
         'USER': 'postgres',
         'PASSWORD': 'canadawaterbottle^23',
         'HOST': 'aa1kvk4ssm5wfd2.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
