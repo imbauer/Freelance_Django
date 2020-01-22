@@ -161,7 +161,7 @@ SECRET_KEY = 'e^b6$r8ro9uwdf)jc4-()u(5v8sg=)*!xk!ehi)qnyaw(^hjqm'
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['freelance-01-django-dev.us-east-2.elasticbeanstalk.com']
 PAYPAL_TEST = True
