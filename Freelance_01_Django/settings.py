@@ -269,10 +269,28 @@ USE_TZ = True
 # STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_URL = '/static/'
+
+STATIC__DIR = str(os.path.dirname(os.getcwd()))
+STATIC__DIR = STATIC__DIR.replace("\\","/")
+STATIC__DIR = STATIC__DIR+r"/Text_Insight_App/main_app/static/"
+#print("STATIC__DIR is: ", STATIC__DIR)
+
+#STATIC_URL = r'C:/Users/howla_000/Documents/GitHub/Text_Insight_App/main_app/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'blog/static/blog'),
+  os.path.join(BASE_DIR, 'blog/static/blog/css'),
+)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
