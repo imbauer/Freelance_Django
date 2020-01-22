@@ -224,7 +224,7 @@ DATABASES = {
         'NAME': 'ebdb',
         'USER': 'postgres',
         'PASSWORD': 'canadawaterbottle^23',
-        'HOST': 'aa1kvk4ssm5wfd2.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
+        'HOST': 'aal6kveaaivm37.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
