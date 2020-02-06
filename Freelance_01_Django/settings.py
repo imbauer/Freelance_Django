@@ -218,16 +218,16 @@ WSGI_APPLICATION = 'Freelance_01_Django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ebdb',
-        'USER': 'postgres',
-        'PASSWORD': 'canadawaterbottle^23',
-        'HOST': 'aal6kveaaivm37.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'ebdb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'canadawaterbottle^23',
+#         'HOST': 'aal6kveaaivm37.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -272,7 +272,7 @@ USE_TZ = True
 
 STATIC__DIR = str(os.path.dirname(os.getcwd()))
 STATIC__DIR = STATIC__DIR.replace("\\","/")
-STATIC__DIR = STATIC__DIR+r"/Text_Insight_App/main_app/static/"
+STATIC__DIR = STATIC__DIR+r"/Text_Insight_App/blog/static/"
 #print("STATIC__DIR is: ", STATIC__DIR)
 
 #STATIC_URL = r'C:/Users/howla_000/Documents/GitHub/Text_Insight_App/main_app/static/'
