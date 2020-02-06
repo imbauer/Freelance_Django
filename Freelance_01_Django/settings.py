@@ -218,27 +218,27 @@ WSGI_APPLICATION = 'Freelance_01_Django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'ebdb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'canadawaterbottle^23',
-#         'HOST': 'aal6kveaaivm37.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'ebdb',
+        'USER': 'postgres',
+        'PASSWORD': 'canadawaterbottle^23',
+        'HOST': 'aal6kveaaivm37.cgvklsytn3bv.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'myproject',
+#         'USER': 'myprojectuser',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 
